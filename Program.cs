@@ -1,23 +1,25 @@
 ﻿using System;
+using System.Globalization;
 
-namespace exercicioSoma
+namespace exercicioCalcularRaioCirculo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int num1, num2 = 0;
-            double soma = 0.0;
 
-            Console.Write("Entre com um número: ");
-            num1 = int.Parse(Console.ReadLine());
+            // Fórmula da Área: area = PI * raio * raio
+            // Considerando o valor de PI = 3.14159
 
-            Console.Write("Entre com outro número: ");
-            num2 = int.Parse(Console.ReadLine());
+            double raio, area, pi = 3.14159;
 
-            soma = num1 + num2;
+            Console.WriteLine("Entre com o valor do raio: ");
+            raio = double.Parse(Console.ReadLine());
 
-            Console.Write("SOMA = " + soma);
+            area = pi * Math.Pow(raio, 2);
+
+            Console.WriteLine("Área = " + area.ToString( "F4" ,CultureInfo.InvariantCulture));
+
         }
     }
 }
